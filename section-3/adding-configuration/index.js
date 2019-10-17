@@ -17,6 +17,7 @@ var server = http.createServer(function(req, res) {
     // Get the path
     var path = parsedURL.pathname;
     var trimmedPath = path.replace(/^\/+|\/+$/g, '');
+    var lowercasePath = trimmedPath.toLowerCase();
 
     // Get the HTTP method
     var method = req.method.toLowerCase();
@@ -25,7 +26,7 @@ var server = http.createServer(function(req, res) {
     res.end('Hello World\n');
 
     // Log the request path
-    console.log('Request recieved on path: ' + trimmedPath + ' With this method: ' + method);
+    console.log('Request recieved on path: ' + lowercasePath + ' With this method: ' + method);
 
 });
 
